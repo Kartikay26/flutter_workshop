@@ -31,13 +31,13 @@ class MyApp extends StatelessWidget {
     return ListView(
       children: <Widget>[
         Card(
-          child: Text("Todo 1: Prepare for Flutter Workshop"),
+          child: ListTile(title: Text("Todo 1: Prepare for Flutter Workshop"),),
         ),
         Card(
-          child: Text("Todo 2: Complete ED Assignment"),
+          child: ListTile(title: Text("Todo 2: Complete ED Assignment"),),
         ),
         Card(
-          child: Text("Todo 3: Improve rating on CodeChef"),
+          child: ListTile(title: Text("Todo 3: Improve rating on CodeChef"),),
         ),
       ],
     );
