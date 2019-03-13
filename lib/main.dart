@@ -30,16 +30,22 @@ class MyApp extends StatelessWidget {
   Widget _buildTodoList(){
     return ListView(
       children: <Widget>[
-        Card(
-          child: ListTile(title: Text("Todo 1: Prepare for Flutter Workshop"),),
-        ),
-        Card(
-          child: ListTile(title: Text("Todo 2: Complete ED Assignment"),),
-        ),
-        Card(
-          child: ListTile(title: Text("Todo 3: Improve rating on CodeChef"),),
-        ),
+        TodoCard("Todo 1: Prepare for Flutter Workshop"),
+        TodoCard("Todo 2: Complete ED Assignment"),
+        TodoCard("Todo 3: Improve rating on CodeChef"),
       ],
     );
+  }
+}
+
+class TodoCard extends StatelessWidget {
+
+  final String text;
+
+  const TodoCard(this.text);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(child: ListTile(title: Text(text)));
   }
 }
