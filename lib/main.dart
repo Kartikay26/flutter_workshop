@@ -5,6 +5,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
+  final List<String> _todos = ["Todo 1: Prepare for Flutter Workshop", "Todo 2: Complete ED Assignment", "Todo 3: Improve rating on CodeChef"];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,11 +31,7 @@ class MyApp extends StatelessWidget {
 
   Widget _buildTodoList() {
     return ListView(
-      children: <Widget>[
-        TodoCard("Todo 1: Prepare for Flutter Workshop"),
-        TodoCard("Todo 2: Complete ED Assignment"),
-        TodoCard("Todo 3: Improve rating on CodeChef"),
-      ],
+      children: _todos.map((todo) => TodoCard(todo)).toList()
     );
   }
 }
