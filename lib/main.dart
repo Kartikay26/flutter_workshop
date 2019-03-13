@@ -4,9 +4,14 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
 
-  final List<String> _todos = ["Todo 1: Prepare for Flutter Workshop", "Todo 2: Complete ED Assignment", "Todo 3: Improve rating on CodeChef"];
+class _MyAppState extends State<MyApp> {
+
+  List<String> _todos = ["Todo 1: Prepare for Flutter Workshop", "Todo 2: Complete ED Assignment", "Todo 3: Improve rating on CodeChef"];
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +31,9 @@ class MyApp extends StatelessWidget {
   }
 
   void _buttonPressed() {
-    print("Button was Pressed.");
+    setState(() {
+      _todos.add("New todo!");
+    });
   }
 
   Widget _buildTodoList() {
