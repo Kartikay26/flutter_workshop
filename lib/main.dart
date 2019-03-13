@@ -16,7 +16,15 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Text("Hi There"),
         ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: _buttonPressed,
+        ),
       ),
     );
+  }
+
+  void _buttonPressed(){
+    print("Button was Pressed.");
   }
 }
