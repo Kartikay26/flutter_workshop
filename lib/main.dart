@@ -45,14 +45,16 @@ class TodoCard extends StatefulWidget {
 }
 
 class _TodoCardState extends State<TodoCard> {
-
   bool checked = false;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: Text(widget.text),
+        title: Text(
+          widget.text,
+          style: checked ? TextStyle(decoration: TextDecoration.lineThrough) : null,
+        ),
         trailing: Checkbox(
           value: checked,
           onChanged: _setCheckedValue,
@@ -61,8 +63,8 @@ class _TodoCardState extends State<TodoCard> {
     );
   }
 
-  void _setCheckedValue(bool value){
-    setState(() {  
+  void _setCheckedValue(bool value) {
+    setState(() {
       if (checked == true)
         checked = false;
       else
